@@ -34,28 +34,129 @@
         .animated-image {
             animation: pulse-border 2s infinite;
         }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .message {
+            margin-bottom: 1rem;
+        }
+
+        .bot-message {
+            text-align: left;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .bot-message .bg-blue-100 {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .user-message .bg-gray-200 {
+            background-color: #e5e7eb;
+            color: #374151;
+        }
+
+        .typing-dots {
+            display: inline-block;
+        }
+
+        .dot {
+            animation: blink 1.4s infinite both;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes blink {
+            0%, 80%, 100% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 1;
+            }
+        }
+
+        .fade-in-message {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #send-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        #clear-button {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #clear-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+        }
+
+        #typing-indicator {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            padding: 8px 16px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
 
-    <header class="bg-white sticky top-0 z-50 shadow-md">
+    <header class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 sticky top-0 z-50 shadow-lg backdrop-blur-sm bg-opacity-90">
         <nav class="container mx-auto p-4 flex justify-between items-center flex-wrap">
-            <h1 class="text-2xl font-bold text-gray-900">Abhishek Dhakad</h1>
-            <div class="flex space-x-4 md:space-x-6 text-gray-600 font-medium">
-                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
-                <a href="#education" class="hover:text-blue-600 transition-colors">Education</a>
-                <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
-                <a href="#certificates" class="hover:text-blue-600 transition-colors">Certificates</a>
-                <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+            <h1 class="text-2xl font-bold text-white animate-pulse">Abhishek Dhakad</h1>
+            <div class="flex space-x-4 md:space-x-6 text-white font-medium">
+                <a href="#about" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">About</a>
+                <a href="#education" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Education</a>
+                <a href="#skills" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Skills</a>
+                <a href="#projects" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Projects</a>
+                <a href="#certificates" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Certificates</a>
+                <a href="#ai-assistant" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">AI Assistant</a>
+                <a href="#contact" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Contact</a>
             </div>
         </nav>
     </header>
 
-    <section id="about" class="py-16 md:py-24 bg-gradient-to-r from-blue-50 to-cyan-50">
+    <section id="about" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-8 md:space-y-0 md:space-x-12">
             <div class="flex-shrink-0 fade-in">
-                <img src="WhatsApp Image 2025-09-13 at 16.28.53_392ff5a4.jpg" alt="Abhishek Dhakad's professional photo" class="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-blue-600 shadow-xl animated-image">
+                <img src="WhatsApp Image 2025-09-13 at 16.28.53_392ff5a4.jpg" alt="Abhishek Dhakad's professional photo" class="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-blue-600 shadow-xl animated-image floating">
             </div>
             <div class="max-w-xl fade-in" style="transition-delay: 0.2s;">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
@@ -69,10 +170,10 @@
                     I am always eager to learn, collaborate, and work on projects that blend AI creativity with software development.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-colors transform hover:scale-105">
+                    <a href="#contact" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
                         Let's Connect
                     </a>
-                    <a href="Abhishek_dhakad_6th (1).pdf" download="Abhishek_Dhakad_Resume.pdf" class="inline-block border border-blue-600 text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition-colors transform hover:scale-105">
+                    <a href="Abhishek_dhakad_6th (1).pdf" download="Abhishek_Dhakad_Resume.pdf" class="inline-block border-2 border-gradient-to-r from-purple-600 to-pink-600 text-purple-600 font-bold py-3 px-8 rounded-full hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-translate-y-2 shadow-lg">
                         Download Resume
                     </a>
                 </div>
@@ -89,11 +190,11 @@
                 <div class="bg-gray-50 rounded-xl shadow-lg p-6 fade-in" style="transition-delay: 0.1s;">
                     <h3 class="text-xl font-semibold mb-1 text-blue-600">Bachelor of Technology in Computer Science</h3>
                     <p class="text-gray-700 font-medium">Bansal Institute of Science & Technology, Bhopal</p>
-                    <p class="text-gray-500 text-sm mt-1">7.96 CGPA 2022-2026</p>
+                    <p class="text-gray-500 text-sm mt-1">2022-2026</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-lg p-6 fade-in" style="transition-delay: 0.2s;">
-                <h3 class="text-xl font-semibold mb-1 text-blue-600">Class XII</h3>
-                    <p class="text-gray-700 font-medium">Sahara Public Higher Sec.School, Kalapipal (MP)</p>
+                    <h3 class="text-xl font-semibold mb-1 text-blue-600">Class XII</h3>
+                    <p class="text-gray-700 font-medium">Sahara Public Higher Sec. School, Kalapipal (MP)</p>
                     <p class="text-gray-500 text-sm mt-1">86.4% (2021-2022)</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-lg p-6 fade-in" style="transition-delay: 0.3s;">
@@ -107,60 +208,75 @@
 
     ---
 
-    <section id="skills" class="py-16 md:py-24 bg-gray-50">
+    <section id="skills" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 fade-in">My Skills</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in">
                     <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">Core Java</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.1s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.1s;">
                     <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">JavaScript</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.2s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.2s;">
                     <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">HTML</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.3s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.3s;">
                     <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">CSS</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.4s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.4s;">
                     <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">Bootstrap</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.5s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.5s;">
                     <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">Git</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.6s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.6s;">
                     <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">GitHub</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.7s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.7s;">
                     <img src="https://img.icons8.com/color/48/000000/database.png" alt="Database Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">SQL</span>
                 </div>
-                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow fade-in" style="transition-delay: 0.8s;">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 fade-in" style="transition-delay: 0.8s;">
                     <img src="https://img.icons8.com/color/48/000000/ai.png" alt="AI Tools Icon" class="h-12 w-12 mb-2">
                     <span class="font-medium text-gray-800">AI Tools</span>
                 </div>
             </div>
-            <p class="text-center text-lg text-gray-600 mt-8 fade-in" style="transition-delay: 0.9s;">
-                I also have good knowledge of *Prompt Engineering* and *AI tools* to enhance development and productivity.
-            </p>
+            <div class="text-center mt-8 fade-in animate-bounce" style="transition-delay: 0.9s;">
+                <div class="inline-block bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100 p-6 rounded-xl shadow-lg border border-purple-200">
+                    <div class="flex items-center justify-center space-x-4 mb-2">
+                        <svg class="w-8 h-8 text-purple-600 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                            AI Expertise
+                        </span>
+                        <svg class="w-8 h-8 text-indigo-600 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">
+                        I also have excellent knowledge of <span class="font-bold text-purple-600">Prompt Engineering</span> and <span class="font-bold text-blue-600">AI Tools</span> to enhance development and productivity.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     ---
 
-    <section id="projects" class="py-16 md:py-24">
+    <section id="projects" class="py-16 md:py-24 bg-gradient-to-br from-white via-cyan-50 to-blue-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 fade-in">My Work</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden fade-in">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 overflow-hidden fade-in">
                     <img src="https://placehold.co/600x400/2563EB/FFFFFF?text=Online+Exam" alt="Online Examination Website Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Online Examination Website</h3>
@@ -168,7 +284,7 @@
                         <a href="https://github.com/Abhi-dhakad/online-examination-system" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">View on GitHub &rarr;</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden fade-in" style="transition-delay: 0.2s;">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 overflow-hidden fade-in" style="transition-delay: 0.2s;">
                     <img src="https://placehold.co/600x400/06B6D4/FFFFFF?text=Weather+Dashboard" alt="Weather Dashboard Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
@@ -176,7 +292,7 @@
                         <a href="https://github.com/Govind-Mewada/WeatherDashBoard" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">View on GitHub &rarr;</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden fade-in" style="transition-delay: 0.4s;">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 overflow-hidden fade-in" style="transition-delay: 0.4s;">
                     <img src="https://placehold.co/600x400/F97316/FFFFFF?text=Tic+Tac+Toe+Game" alt="Tic Tac Toe Game Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Tic Tac Toe Game</h3>
@@ -190,16 +306,16 @@
 
     ---
 
-    <section id="certificates" class="py-16 md:py-24 bg-gray-50">
+    <section id="certificates" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-purple-50 to-pink-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 fade-in">Certificates</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="bg-white rounded-xl shadow-lg text-center p-6 hover:shadow-xl transition-shadow fade-in" style="transition-delay: 0.1s;">
+                <div class="bg-white rounded-xl shadow-lg text-center p-6 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 fade-in" style="transition-delay: 0.1s;">
                     <img src="https://placehold.co/600x400/2563EB/FFFFFF?text=Java+by+HackerRank" alt="Java HackerRank Certificate" class="w-full h-auto rounded-md mb-4">
                     <h3 class="text-xl font-semibold mb-1">Java</h3>
                     <p class="text-gray-600 text-sm">Issued by HackerRank</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg text-center p-6 hover:shadow-xl transition-shadow fade-in" style="transition-delay: 0.3s;">
+                <div class="bg-white rounded-xl shadow-lg text-center p-6 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 fade-in" style="transition-delay: 0.3s;">
                     <img src="https://placehold.co/600x400/06B6D4/FFFFFF?text=JavaScript+by+Cisco" alt="JavaScript Cisco Networking Certificate" class="w-full h-auto rounded-md mb-4">
                     <h3 class="text-xl font-semibold mb-1">JavaScript</h3>
                     <p class="text-gray-600 text-sm">Issued by Cisco Networking</p>
@@ -210,26 +326,67 @@
 
     ---
 
-    <section id="contact" class="py-16 md:py-24 bg-gray-900 text-white">
+    <section id="ai-assistant" class="py-16 md:py-24 bg-gradient-to-br from-white via-indigo-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 fade-in">My AI Assistant</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-gray-600 text-center mb-8 fade-in">
+                    This AI assistant is an interactive tool designed to help you navigate my portfolio and learn more about my work and skills. Ask me anything about Abhishek's projects, education, skills, or background!
+                </p>
+                <div class="bg-gray-50 rounded-xl shadow-lg p-6 fade-in" style="transition-delay: 0.2s;">
+                    <div id="chat-messages" class="h-80 overflow-y-auto mb-4 p-4 bg-white rounded-lg border">
+                        <div class="message bot-message mb-4 fade-in-message">
+                            <div class="flex items-start space-x-2">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                                </div>
+                                <div class="bg-gradient-to-r from-blue-400 to-cyan-400 text-white p-3 rounded-lg shadow-lg max-w-xs">
+                                    Hello! I'm Abhishek's AI assistant. How can I help you today? You can ask about his skills, projects, education, and technical expertise. Feel free to ask about his skills or professional background.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Type your question here..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button id="send-button" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Send</button>
+                        <button id="clear-button" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">Clear</button>
+                    </div>
+                    <div id="typing-indicator" class="hidden mt-2 text-center">
+                        <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-400 to-pink-400 text-white px-4 py-2 rounded-full shadow-lg">
+                            <svg class="w-4 h-4 animate-spin" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="typing-dots font-medium">AI is thinking</span>
+                            <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Get In Touch</h2>
             <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 fade-in" style="transition-delay: 0.2s;">
                 I'm always open to new opportunities and collaborations. Feel free to reach out!
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 fade-in" style="transition-delay: 0.4s;">
-                <a href="mailto:0112CS221004@gmail.com" class="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors">
+                <a href="mailto:0112CS221004@gmail.com" class="flex items-center space-x-2 text-white hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 2a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V10z" />
                     </svg>
                     <span>0112CS221004@gmail.com</span>
                 </a>
-                <a href="https://linkedin.com/in/abhishek-dhakad--" target="_blank" class="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors">
+                <a href="https://linkedin.com/in/abhishek-dhakad--" target="_blank" class="flex items-center space-x-2 text-white hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S0 4.881 0 3.5C0 2.12 1.11 1 2.5 1S4.98 2.12 4.98 3.5zm.02 4.5h-5V24h5V8zM18.42 7.5c-2.47 0-4.03 1.25-4.94 2.5v-.95h-5V24h5v-6.95c0-1.78.89-2.9 1.98-2.9S19.5 15.65 19.5 17.5v6.5h5V16.7c0-2.88-1.89-5.2-4.58-5.2z"/>
                     </svg>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/Abhi-dhakad" target="_blank" class="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors">
+                <a href="https://github.com/Abhi-dhakad" target="_blank" class="flex items-center space-x-2 text-white hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.82-.258.82-.577 0-.285-.011-1.04-.017-2.04-3.338.724-4.042-1.61-4.042-1.61-.542-1.373-1.322-1.748-1.322-1.748-1.085-.74.083-.725.083-.725 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.29-1.552 3.295-1.23 3.295-1.23.645 1.653.24 2.873.105 3.176.77.84 1.235 1.91 1.235 3.22 0 4.611-2.801 5.626-5.476 5.92-.42.365-.81 1.096-.81 2.22 0 1.606.015 2.897.015 3.287 0 .32.217.69.825.575 4.77-1.589 8.204-6.086 8.204-11.386C24 5.373 18.627 0 12 0z"/>
                     </svg>
@@ -239,7 +396,6 @@
         </div>
     </section>
 
-    ---
 
     <footer class="bg-gray-900 text-gray-400 text-center p-4">
         &copy; 2024 Abhishek Dhakad. All Rights Reserved.
@@ -273,6 +429,109 @@
         document.querySelectorAll('.fade-in').forEach(element => {
             observer.observe(element);
         });
+
+        // AI Assistant Chatbot
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'} fade-in-message`;
+            messageDiv.innerHTML = `
+                <div class="flex items-start space-x-2">
+                    <div class="flex-shrink-0">
+                        ${isUser ? '<svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>' : '<svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>'}
+                    </div>
+                    <div class="${isUser ? 'bg-gradient-to-r from-purple-400 to-pink-400 text-white' : 'bg-gradient-to-r from-blue-400 to-cyan-400 text-white'} p-3 rounded-lg shadow-lg max-w-xs">
+                        ${message}
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(userMessage) {
+            const msg = userMessage.toLowerCase();
+            if (msg.includes('skill') || msg.includes('skills')) {
+                return "Abhishek has skills in Core Java, JavaScript, HTML, CSS, Bootstrap, Git, GitHub, SQL, AI Tools, and Prompt Engineering. He specializes in creating innovative solutions by combining programming with AI-powered automation. He also has knowledge of MERN stack for full-stack development.";
+            } else if (msg.includes('project') || msg.includes('projects')) {
+                if (msg.includes('online') || msg.includes('exam')) {
+                    return "The Online Examination Website is a full-stack project using Core Java and JavaScript. It features user authentication, timed quizzes, and real-time score calculation. It was part of his curriculum and demonstrates his ability in logic-based web applications. GitHub: https://github.com/Abhi-dhakad/online-examination-system";
+                } else if (msg.includes('weather')) {
+                    return "The Weather Dashboard is a responsive single-page app using the OpenWeatherMap API. It displays real-time weather data and was a team project focusing on frontend development. GitHub: https://github.com/Govind-Mewada/WeatherDashBoard";
+                } else if (msg.includes('tic') || msg.includes('toe')) {
+                    return "The Tic Tac Toe Game practices dynamic DOM manipulation and JavaScript logic. It handles turn switching and game updates. GitHub: https://github.com/Abhi-dhakad/tic-tac-toe";
+                } else {
+                    return "Abhishek has worked on: 1) Online Examination Website (Java/JS), 2) Weather Dashboard (team project), 3) Tic Tac Toe Game (JS). Check his GitHub for more!";
+                }
+            } else if (msg.includes('education') || msg.includes('edu') || msg.includes('school') || msg.includes('college')) {
+                return "Abhishek is pursuing B.Tech in CS from Bansal Institute of Science & Technology (2022-2026). He scored 86.4% in Class XII and 93.3% in Class X from Sahara Public Higher Sec. School.";
+            } else if (msg.includes('certificate') || msg.includes('cert') || msg.includes('certification')) {
+                return "Certifications: Java from HackerRank, JavaScript from Cisco Networking. These validate his programming expertise.";
+            } else if (msg.includes('contact') || msg.includes('email') || msg.includes('linkedin') || msg.includes('github')) {
+                return "Contact: Email - 0112CS221004@gmail.com, LinkedIn - abhishek-dhakad--, GitHub - Abhi-dhakad. He's open to collaborations!";
+            } else if (msg.includes('prompt') || msg.includes('ai prompt')) {
+                return "As an AI Prompt Engineer, here's a sample prompt: 'Create a detailed project plan for a web application that uses AI to generate personalized learning paths for students, including milestones, tech stack, and potential challenges.' What kind of prompt would you like help with?";
+            } else if (msg.includes('experience') || msg.includes('work')) {
+                return "Abhishek has experience in full-stack development with Java and JS, frontend with HTML/CSS/JS, and AI tool integration. His projects showcase practical application of his skills.";
+            } else if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                return "Hello! I'm Abhishek's AI assistant. Ask me about his skills, projects, education, or generate AI prompts!";
+            } else if (msg.includes('about') || msg.includes('who')) {
+                return "Abhishek Dhakad is a CS student and AI Prompt Engineer. He builds scalable apps with Java, JS, MERN, SQL, and uses AI for creative solutions. Passionate about tech and collaboration.";
+            } else {
+                return "I can help with info on skills, projects, education, certificates, contact, or even generate AI prompts. Try 'What are his skills?' or 'Create a prompt for web development.'";
+            }
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+
+                // Scroll to chatbot if not in view
+                const aiSection = document.getElementById('ai-assistant');
+                const rect = aiSection.getBoundingClientRect();
+                if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                    aiSection.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Show typing indicator
+                const typingIndicator = document.getElementById('typing-indicator');
+                typingIndicator.classList.remove('hidden');
+
+                setTimeout(() => {
+                    typingIndicator.classList.add('hidden');
+                    const response = getBotResponse(message);
+                    addMessage(response);
+                }, 1500); // Longer delay for typing effect
+            }
+        }
+
+        function clearChat() {
+            chatMessages.innerHTML = `
+                <div class="message bot-message mb-4 fade-in-message">
+                    <div class="flex items-start space-x-2">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-400 to-cyan-400 text-white p-3 rounded-lg shadow-lg max-w-xs">
+                            Hello! I'm Abhishek's AI assistant. How can I help you today? You can ask about his skills, projects, education, and technical expertise. Feel free to ask about his skills or professional background.
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        document.getElementById('clear-button').addEventListener('click', clearChat);
     </script>
 </body>
 </html>
