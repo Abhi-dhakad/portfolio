@@ -99,6 +99,146 @@
             }
         }
 
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.875rem;
+            }
+
+            .flex-wrap {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .space-x-4 > * + * {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-cols-5 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .max-w-xl {
+                max-width: 100%;
+            }
+
+            .text-4xl {
+                font-size: 2rem;
+            }
+
+            .text-5xl {
+                font-size: 2.5rem;
+            }
+
+            .p-6 {
+                padding: 1rem;
+            }
+
+            .h-80 {
+                height: 16rem;
+            }
+
+            .max-w-xs {
+                max-width: 100%;
+            }
+
+            .flex-col {
+                flex-direction: column;
+            }
+
+            .space-y-4 > * + * {
+                margin-top: 1rem;
+            }
+
+            .space-x-8 > * + * {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-lg {
+                font-size: 1rem;
+            }
+
+            .text-xl {
+                font-size: 1.125rem;
+            }
+
+            .py-3 {
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+            }
+
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .px-4 {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            .py-2 {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-cols-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-cols-5 {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Menu Styles */
+            #mobile-menu {
+                z-index: 1000;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            #mobile-menu a {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            #mobile-menu a:last-child {
+                border-bottom: none;
+            }
+        }
+
         #send-button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
@@ -139,9 +279,16 @@
 <body class="bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
 
     <header class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 sticky top-0 z-50 shadow-lg backdrop-blur-sm bg-opacity-90">
-        <nav class="container mx-auto p-4 flex justify-between items-center flex-wrap">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-white animate-pulse">Abhishek Dhakad</h1>
-            <div class="flex space-x-4 md:space-x-6 text-white font-medium">
+            <!-- Hamburger Menu Button -->
+            <button id="hamburger-menu" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6 text-white font-medium">
                 <a href="#about" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">About</a>
                 <a href="#education" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Education</a>
                 <a href="#skills" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Skills</a>
@@ -149,6 +296,18 @@
                 <a href="#certificates" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Certificates</a>
                 <a href="#ai-assistant" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">AI Assistant</a>
                 <a href="#contact" class="hover:text-yellow-300 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">Contact</a>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 shadow-lg hidden">
+                <div class="flex flex-col space-y-4 p-4 text-white font-medium">
+                    <a href="#about" class="hover:text-yellow-300 transition-all duration-300">About</a>
+                    <a href="#education" class="hover:text-yellow-300 transition-all duration-300">Education</a>
+                    <a href="#skills" class="hover:text-yellow-300 transition-all duration-300">Skills</a>
+                    <a href="#projects" class="hover:text-yellow-300 transition-all duration-300">Projects</a>
+                    <a href="#certificates" class="hover:text-yellow-300 transition-all duration-300">Certificates</a>
+                    <a href="#ai-assistant" class="hover:text-yellow-300 transition-all duration-300">AI Assistant</a>
+                    <a href="#contact" class="hover:text-yellow-300 transition-all duration-300">Contact</a>
+                </div>
             </div>
         </nav>
     </header>
@@ -277,11 +436,11 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 fade-in">My Work</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 overflow-hidden fade-in">
-                    <img src="https://placehold.co/600x400/2563EB/FFFFFF?text=Online+Exam" alt="Online Examination Website Project" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/2563EB/FFFFFF?text=AI+Interview+Simulator" alt="AI Interview Simulator Project" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Online Examination Website</h3>
-                        <p class="text-gray-600 text-sm mb-4">Developed a full-stack online examination platform using Core Java and JavaScript. Features include user authentication, a timed quiz system, and real-time score calculation. This project was a major part of my curriculum, demonstrating my ability to build robust, logic-based web applications.</p>
-                        <a href="https://github.com/Abhi-dhakad/online-examination-system" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">View on GitHub &rarr;</a>
+                        <h3 class="text-xl font-semibold mb-2">AI Interview Simulator</h3>
+                        <p class="text-gray-600 text-sm mb-4">An AI-powered interview simulation tool that helps users practice technical interviews. Built with modern web technologies, it features adaptive questioning, real-time feedback, and personalized coaching to improve interview skills.</p>
+                        <a href="https://github.com/Abhi-dhakad/ai-interview-simulator" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">View on GitHub &rarr;</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 overflow-hidden fade-in" style="transition-delay: 0.2s;">
@@ -297,7 +456,21 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Tic Tac Toe Game</h3>
                         <p class="text-gray-600 text-sm mb-4">A simple Tic Tac Toe game created to practice dynamic DOM manipulation and JavaScript logic. It handles turn switching and updates the game board based on player moves.</p>
-                        <a href="https://github.com/Abhi-dhakad/tic-tac-toe" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">View on GitHub &rarr;</a>
+                        <div class="flex space-x-4">
+                            <a href="https://abhi-dhakad.github.io/tic-tac-toe/" target="_blank" class="text-green-600 hover:text-green-800 font-medium transition-colors">Live Demo &rarr;</a>
+                            <a href="https://github.com/Abhi-dhakad/tic-tac-toe" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 overflow-hidden fade-in" style="transition-delay: 0.6s;">
+                    <img src="https://placehold.co/600x400/10B981/FFFFFF?text=AI+Career+Mentor" alt="AI Career Mentor Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">AI Career Mentor</h3>
+                        <p class="text-gray-600 text-sm mb-4">Built an AI-powered career guidance web app that suggests personalized career paths based on user interests and skills. Designed responsive UI using Tailwind CSS and implemented data-driven recommendations in React.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://ai-carrer-mentor.vercel.app/" target="_blank" class="text-green-600 hover:text-green-800 font-medium transition-colors">Live Demo &rarr;</a>
+                            <a href="https://github.com/Abhi-dhakad/ai-carrer-mentor" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">GitHub &rarr;</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -457,14 +630,14 @@
             if (msg.includes('skill') || msg.includes('skills')) {
                 return "Abhishek has skills in Core Java, JavaScript, HTML, CSS, Bootstrap, Git, GitHub, SQL, AI Tools, and Prompt Engineering. He specializes in creating innovative solutions by combining programming with AI-powered automation. He also has knowledge of MERN stack for full-stack development.";
             } else if (msg.includes('project') || msg.includes('projects')) {
-                if (msg.includes('online') || msg.includes('exam')) {
-                    return "The Online Examination Website is a full-stack project using Core Java and JavaScript. It features user authentication, timed quizzes, and real-time score calculation. It was part of his curriculum and demonstrates his ability in logic-based web applications. GitHub: https://github.com/Abhi-dhakad/online-examination-system";
+                if (msg.includes('ai') && (msg.includes('interview') || msg.includes('simulator'))) {
+                    return "The AI Interview Simulator is an AI-powered tool for practicing technical interviews. It features adaptive questioning, real-time feedback, and personalized coaching. Built with modern web technologies to help users improve their interview skills. GitHub: https://github.com/Abhi-dhakad/ai-interview-simulator";
                 } else if (msg.includes('weather')) {
                     return "The Weather Dashboard is a responsive single-page app using the OpenWeatherMap API. It displays real-time weather data and was a team project focusing on frontend development. GitHub: https://github.com/Govind-Mewada/WeatherDashBoard";
                 } else if (msg.includes('tic') || msg.includes('toe')) {
                     return "The Tic Tac Toe Game practices dynamic DOM manipulation and JavaScript logic. It handles turn switching and game updates. GitHub: https://github.com/Abhi-dhakad/tic-tac-toe";
                 } else {
-                    return "Abhishek has worked on: 1) Online Examination Website (Java/JS), 2) Weather Dashboard (team project), 3) Tic Tac Toe Game (JS). Check his GitHub for more!";
+                    return "Abhishek has worked on: 1) AI Interview Simulator (AI-powered), 2) Weather Dashboard (team project), 3) Tic Tac Toe Game (JS). Check his GitHub for more!";
                 }
             } else if (msg.includes('education') || msg.includes('edu') || msg.includes('school') || msg.includes('college')) {
                 return "Abhishek is pursuing B.Tech in CS from Bansal Institute of Science & Technology (2022-2026). He scored 86.4% in Class XII and 93.3% in Class X from Sahara Public Higher Sec. School.";
@@ -532,6 +705,28 @@
             }
         });
         document.getElementById('clear-button').addEventListener('click', clearChat);
+
+        // Mobile Menu Toggle
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside or on a link
+        document.addEventListener('click', (e) => {
+            if (!hamburgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>
